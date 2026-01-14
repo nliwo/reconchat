@@ -369,9 +369,9 @@
       if (typeof payload === "string") return payload || "(sin respuesta)";
       if (Array.isArray(payload)) {
         const first = payload[0] || {};
-        return first.reply || first.text || JSON.stringify(first);
+        return first.output || first.text || JSON.stringify(first);
       }
-      return payload.reply || payload.text || JSON.stringify(payload);
+      return payload.output || payload.text || JSON.stringify(payload);
     }
 
     async function onSend() {
