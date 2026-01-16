@@ -346,8 +346,8 @@
       if (!url || !url.startsWith("http")) throw new Error("Configurá una URL válida del webhook de n8n.");
 
       const form = new FormData();
-      form.append("message", message);
-      form.append("conversationId", getConversationId());
+      form.append("chatInput", message);
+      form.append("sessionId", getConversationId());
 
       // Mandamos el historial completo (sin archivos, solo texto/roles)
       form.append("history", JSON.stringify(history));
